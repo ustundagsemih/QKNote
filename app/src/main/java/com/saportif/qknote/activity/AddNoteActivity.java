@@ -52,7 +52,7 @@ public class AddNoteActivity extends AppCompatActivity {
         realm = Realm.getDefaultInstance();
 
         realm.beginTransaction();
-        Note note = realm.createObject(Note.class);
+        Note note = realm.createObject(Note.class, UUID.randomUUID().toString());
         String note_title = et_note_title.getText().toString().trim();
         String note_description = et_note_description.getText().toString().trim();
 
@@ -63,7 +63,7 @@ public class AddNoteActivity extends AppCompatActivity {
         else {
             note.setTitle(note_title);
             note.setDescription(note_description);
-            note.setId(UUID.randomUUID().toString());
+            //note.setId(UUID.randomUUID().toString());
 
             Intent intent = new Intent();
             intent.putExtra("noteTitle", note.getTitle());
