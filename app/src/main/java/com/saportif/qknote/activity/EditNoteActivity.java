@@ -41,8 +41,9 @@ public class EditNoteActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.getBackground().setAlpha(0);
+//      getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setTitle("Düzenle");
+
 
         et_note_title = (EditText) findViewById(R.id.et_note_title);
         et_note_description = (EditText) findViewById(R.id.et_note_description);

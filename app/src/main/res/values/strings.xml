@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QKNote</string>
+    <string name="title">Başlık</string>
+    <string name="qk_note">QK Note</string>
+    <string name="create_note">Yeni Not Oluştur</string>
+    <string name="new_note">Yeni Not</string>
 </resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QKNote</string>
+    <string name="title">Title</string>
+    <string name="qk_note">QK Note</string>
+    <string name="create_note">Create a New Note</string>
+    <string name="new_note">New Note</string>
+</resources>
