@@ -5,4 +5,8 @@
     <string name="qk_note">QK Note</string>
     <string name="create_note">Create a New Note</string>
     <string name="new_note">New Note</string>
+
+    <string name="do_you_want_to_delete">Do You Want to Delete?</string>
+    <string name="yes_delete">Yes</string>
+    <string name="no_delete">No</string>
 </resources>

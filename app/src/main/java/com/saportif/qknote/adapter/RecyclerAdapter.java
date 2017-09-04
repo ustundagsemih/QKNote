@@ -34,25 +34,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             title = (TextView) itemView.findViewById(R.id.tv_note_title);
             description = (TextView) itemView.findViewById(R.id.tv_note_description);
         }
-
-        //OnClickListener
-        public void bind(final Note note) {
-            title.setText(note.getTitle());
-            description.setText(note.getDescription());
-        }
     }
-
-    private List<Note> mData = Collections.emptyList();
     private List<Note> mNotes;
     private Context mContext;
 
     public RecyclerAdapter(Context context, List<Note> notes) {
         mContext = context;
         mNotes = notes;
-    }
-
-    private Context getContext() {
-        return mContext;
     }
 
     @Override
@@ -88,10 +76,5 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
-    }
-
-    public void updateList(List<Note> data) {
-        mData = data;
-        notifyDataSetChanged();
     }
 }

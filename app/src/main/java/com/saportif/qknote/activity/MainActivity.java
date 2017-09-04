@@ -28,7 +28,6 @@ import io.realm.RealmResults;
 
 public class MainActivity extends AppCompatActivity {
 
-    //TODO: Check Update Listview
     Toolbar toolbar;
     TextView addNote;
 
@@ -64,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         rvNotes.setLayoutManager(new LinearLayoutManager(this));
         rvNotes.addItemDecoration(new  DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL_LIST));
 
-
         rvNotes.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), rvNotes, new ClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -84,12 +82,11 @@ public class MainActivity extends AppCompatActivity {
             public void onLongClick(View view, final int position) {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
                 // set title
-                alertDialogBuilder.setTitle("Silmek İstediğinizden Emin Misiniz?");
+                alertDialogBuilder.setTitle(R.string.do_you_want_to_delete);
                 // set dialog message
                 alertDialogBuilder
-                        .setMessage("Click yes to exit!")
                         .setCancelable(false)
-                        .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                        .setPositiveButton(R.string.yes_delete,new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
                                 Note item = notes.get(position);
                                 String noteId = item.getId();
@@ -104,12 +101,11 @@ public class MainActivity extends AppCompatActivity {
                                 recyclerAdapter.notifyItemRangeChanged(position, notes.size());
                             }
                         })
-                        .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                        .setNegativeButton(R.string.no_delete,new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
                             }
                         }).create().show();
-
             }
         }));
 
@@ -171,9 +167,6 @@ public class MainActivity extends AppCompatActivity {
 
                 realm.copyToRealmOrUpdate(noteEdit);
                 realm.commitTransaction();
-
-                //recyclerAdapter.updateList(notes);
-
             }
 
             if(resultCode == RESULT_CANCELED) {
@@ -199,22 +192,4 @@ public class MainActivity extends AppCompatActivity {
 
         void onLongClick(View view, int position);
     }
-
-    private void addSampleData() {
-        Note note = new Note("Title", "Description");
-        adapter.add(note);
-        note = new Note("Title", "Description2Description2Description2Description2D");
-        adapter.add(note);
-        note = new Note("Title", "Description2Description2Description2Description2D");
-        adapter.add(note);
-        note = new Note("Title", "Description2Description2Description2Description2D");
-        adapter.add(note);
-        note = new Note("Title", "Description2Description2Description2Description2D");
-        adapter.add(note);
-        note = new Note("Title", "Description2Description2Description2Description2D");
-        adapter.add(note);
-        note = new Note("Title", "Description2Description2Description2Description2D");
-        adapter.add(note);
-    }
-
 }

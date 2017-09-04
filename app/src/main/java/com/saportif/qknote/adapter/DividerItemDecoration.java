@@ -9,6 +9,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.saportif.qknote.R;
+
 /**
  * Created by Semih on 22.09.2016.
  */
@@ -29,9 +31,10 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
     public DividerItemDecoration(Context context, int orientation) {
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
-        mDivider = a.getDrawable(0);
+        //mDivider = a.getDrawable(0);
         a.recycle();
         setOrientation(orientation);
+        mDivider = context.getResources().getDrawable(R.drawable.line_divider);
     }
 
     public void setOrientation(int orientation) {

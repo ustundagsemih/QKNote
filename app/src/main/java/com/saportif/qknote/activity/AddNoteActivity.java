@@ -25,7 +25,6 @@ public class AddNoteActivity extends AppCompatActivity {
 
     EditText et_note_title, et_note_description;
     Toolbar toolbar;
-    CheckBox cb;
     Realm realm;
 
     @Override
@@ -33,25 +32,11 @@ public class AddNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
 
-        final LinearLayout ll = (LinearLayout) findViewById(R.id.addNoteLL);
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         et_note_title = (EditText) findViewById(R.id.et_note_title);
         et_note_description = (EditText) findViewById(R.id.et_note_description);
-
-        TextView tv = new TextView(this);
-        tv.setHint("Yeni öğe");
-        ll.addView(tv);
-
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cb = new CheckBox(getApplicationContext());
-                ll.addView(cb);
-            }
-        });
 
         et_note_description.requestFocus();
         final InputMethodManager imm = (InputMethodManager) getSystemService(this.INPUT_METHOD_SERVICE);

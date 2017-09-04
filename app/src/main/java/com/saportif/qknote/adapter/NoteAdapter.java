@@ -22,10 +22,6 @@ public class NoteAdapter extends ArrayAdapter<Note>  {
         super(context, 0, notes);
     }
 
-    /*public NoteAdapter(Context context, RealmResults<Note> realmResults) {
-        super(context, realmResults);
-    }*/
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;

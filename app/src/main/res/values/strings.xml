@@ -4,4 +4,8 @@
     <string name="qk_note">QK Note</string>
     <string name="create_note">Yeni Not Oluştur</string>
     <string name="new_note">Yeni Not</string>
+
+    <string name="do_you_want_to_delete">Silmek İstediğinizden Emin Misiniz?</string>
+    <string name="yes_delete">Evet</string>
+    <string name="no_delete">Hayır</string>
 </resources>

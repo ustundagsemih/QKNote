@@ -39,7 +39,7 @@ public class EditNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_note);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar); // Attaching the layout to the toolbar object
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //      getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setTitle("Düzenle");
@@ -93,9 +93,6 @@ public class EditNoteActivity extends AppCompatActivity {
             editIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             setResult(RESULT_OK, editIntent);
             finish();
-
-            //realm.copyToRealmOrUpdate(note);
-            //realm.commitTransaction();
         }
     }
 
@@ -103,16 +100,5 @@ public class EditNoteActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if(id == R.id.delete) {
-            //TODO: implement delete function
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
